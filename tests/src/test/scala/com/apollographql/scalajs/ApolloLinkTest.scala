@@ -1,7 +1,8 @@
 package com.apollographql.scalajs
 
 import com.apollographql.scalajs.link.{ApolloLink, GraphQLRequest, HttpLink, HttpLinkOptions}
-import org.scalatest.{Assertion, AsyncFunSuite}
+import org.scalatest.Assertion
+import org.scalatest.funsuite.AsyncFunSuite
 
 import scala.concurrent.Promise
 import scala.scalajs.js

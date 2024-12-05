@@ -9,7 +9,7 @@ npmDependencies in Compile += "react" -> "16.14.0"
 npmDependencies in Compile += "react-dom" -> "16.14.0"
 npmDependencies in Compile += "react-proxy" -> "1.1.8"
 
-npmDependencies in Compile += "@apollo/client" -> "3.2.4"
+npmDependencies in Compile += "@apollo/client" -> "3.11.10"
 
 npmDevDependencies in Compile += "apollo" -> "2.31.0"
 npmDevDependencies in Compile += "file-loader" -> "1.1.5"

@@ -17,7 +17,7 @@ trait Subscription extends js.Object {
   def unsubscribe(): Unit = js.native
 }
 
-@JSImport("apollo-link", "Observable")
+@JSImport("@apollo/client/core", "Observable")
 @js.native
 class Observable[T](subscriber: Subscriber[T]) extends js.Object {
   def subscribe(observerOrNext: js.Function1[T, Unit],

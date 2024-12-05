@@ -1,14 +1,16 @@
 enablePlugins(ScalaJSBundlerPlugin)
 
-libraryDependencies += "org.scalatest" %%% "scalatest" % "3.1.1" % Test
+libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.19" % Test
 libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.6" % Test
 
-npmDependencies in Compile += "@apollo/client" -> "3.2.4"
+npmDependencies in Compile += "@apollo/client" -> "3.11.10"
 
-npmDevDependencies in Compile += "apollo" -> "2.31.0"
+Test / webpack / version               := "5.96.1"
+installJsdom /version := "25.0.1"
 
-Test / npmDependencies += "react" -> "16.8.4"
-Test / npmDependencies += "react-dom" -> "16.8.4"
+
+Test / npmDependencies += "react" -> "18.2.0"
+Test / npmDependencies += "react-dom" -> "18.2.0"
 
 Compile / npmDependencies += "unfetch" -> "2.1.1"
 
@@ -26,10 +28,15 @@ val namespace = "com.apollographql.scalajs"
   val graphQLScala = out / "queries.scala"
 
   Seq(
-    "apollo", "client:codegen",
-    "--config", "tests/src/test/graphql/queries/apollo.config.js",
-    "--target", "scala",
-    "--namespace", namespace, graphQLScala.getAbsolutePath
+    "apollo",
+    "client:codegen",
+    "--config",
+    "tests/src/test/graphql/queries/apollo.config.js",
+    "--target",
+    "scala",
+    "--namespace",
+    namespace,
+    graphQLScala.getAbsolutePath
   ).!
 
   Seq(graphQLScala)
@@ -45,10 +52,15 @@ val namespace = "com.apollographql.scalajs"
   val graphQLScala = out / "mutations.scala"
 
   Seq(
-    "apollo", "client:codegen",
-    "--config", "tests/src/test/graphql/mutations/apollo.config.js",
-    "--target", "scala",
-    "--namespace", namespace, graphQLScala.getAbsolutePath
+    "apollo",
+    "client:codegen",
+    "--config",
+    "tests/src/test/graphql/mutations/apollo.config.js",
+    "--target",
+    "scala",
+    "--namespace",
+    namespace,
+    graphQLScala.getAbsolutePath
   ).!
 
   Seq(graphQLScala)

@@ -2,7 +2,7 @@ package com.apollographql.scalajs
 
 import com.apollographql.scalajs.cache.InMemoryCache
 import com.apollographql.scalajs.link.{HttpLink, HttpLinkOptions}
-import org.scalatest.AsyncFunSuite
+import org.scalatest.funsuite.AsyncFunSuite
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
